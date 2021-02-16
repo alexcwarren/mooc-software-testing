@@ -36,4 +36,28 @@ public class MyRomanNumeralTest {
         int result = roman.romanToInt("XLIV");
         Assertions.assertEquals(44, result);
     }
+
+    @Test
+    public void singleNumeral() {
+        String result = roman.intToRoman(1);
+        Assertions.assertEquals("I", result);
+    }
+
+    @Test
+    public void multipleNumerals() {
+        String result = roman.intToRoman(8);
+        Assertions.assertEquals("VIII", result);
+    }
+
+    @Test
+    public void numeralWithSubtractiveNotation() {
+        String result = roman.intToRoman(9);
+        Assertions.assertEquals("IX", result);
+    }
+
+    @Test
+    public void numeralWithandWithoutSubtractiveNotation() {
+        String result = roman.intToRoman(434);
+        Assertions.assertEquals("CDXXXIV", result);
+    }
 }
